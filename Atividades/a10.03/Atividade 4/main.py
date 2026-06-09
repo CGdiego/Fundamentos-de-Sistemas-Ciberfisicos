@@ -1,0 +1,30 @@
+from machine import Pin
+from utime import sleep
+
+print("Hello, ESP32!")
+
+led0 = Pin(15, Pin.OUT)
+led1 = Pin(12, Pin.OUT)
+led2 = Pin(14, Pin.OUT)
+led3 = Pin(13, Pin.OUT)
+while True:
+  led0.on()
+  led1.off()
+  led2.off()
+  led3.off()
+  sleep(0.5)
+  led0.off()
+  led1.on()
+  led2.off()
+  led3.off()
+  sleep(0.5)
+  led0.off()
+  led1.off()
+  led2.on()
+  led3.off()
+  sleep(0.5)
+  led0.off()
+  led1.off()
+  led2.off()
+  led3.on()
+  sleep(0.5)
