@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -48,
+      "left": 14.44,
+      "attrs": { "env": "micropython-20260406-v1.28.0" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": 174.9,
+      "left": -104.6,
+      "rotate": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot2",
+      "top": 134.4,
+      "left": -384.8,
+      "rotate": 90,
+      "attrs": { "travelLength": "30" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "h2", "v-198.2" ] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot1:SIG", "esp:32", "green", [ "v0" ] ],
+    [ "pot2:VCC", "esp:3V3", "red", [ "v-105.6", "h287.85" ] ],
+    [ "pot2:GND", "esp:GND.1", "black", [ "h72.4", "v-186.8", "h215.45" ] ],
+    [ "pot2:SIG", "esp:33", "green", [ "h0.8", "v-38.4" ] ]
+  ],
+  "dependencies": {}
+}

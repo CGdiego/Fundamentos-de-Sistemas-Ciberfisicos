@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": { "env": "micropython-20260406-v1.28.0" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": 0.3, "left": -149.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v19.2", "h105.6", "v-105.6" ] ],
+    [ "dht1:SDA", "esp:15", "green", [ "v124.8", "h249.7", "v-67.2" ] ]
+  ],
+  "dependencies": {}
+}
